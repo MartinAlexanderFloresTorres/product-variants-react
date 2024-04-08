@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Alert({ message }: { message: string }) {
   return (
     <div className="p-2 border text-red-400 border-red-200 bg-red-50 rounded-lg flex items-center gap-2 select-none">

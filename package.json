@@ -1,6 +1,6 @@
 {
   "name": "product-variants-react",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "src/index.ts",
   "type": "module",
   "files": [
@@ -12,7 +12,17 @@
     "start": "rollup -c -w",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "product",
+    "variants",
+    "ecommerce",
+    "tailwindcss",
+    "postcss",
+    "rollup",
+    "jest",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Agrega variantes a un producto en React",
@@ -50,10 +60,10 @@
   "bugs": {
     "url": "https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues"
   },
-  "homepage": "https://github.com/MartinAlexanderFloresTorres/product-variants-react",
+  "homepage": "https://product-variant-react.netlify.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues",
+    "url": "git+https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues",
     "directory": "src",
     "web": "https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues"
   }
