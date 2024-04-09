@@ -134,6 +134,14 @@ export interface Variant {
   values: VariantValue[];
 }
 
+export interface VariantOptions  {
+  id: string;
+  name: string;
+  title: string;
+  usage: boolean;
+}
+
+
 export interface VariantValue {
   id: string;
   title: string;
@@ -161,60 +169,56 @@ export interface VariantOption {
 Las opciones de variantes definen las características disponibles para un producto. Estas opciones se pueden personalizar según las necesidades del usuario. A continuación, se muestra un ejemplo de cómo se pueden definir las opciones de variantes en el archivo `variants.ts`:
 
 ```typescript
-import { Variant } from '../interfaces';
-import generateId from '../utils';
 
-export const VARIANTS: Variant[] = [
+export const VARIANTS: VariantOptions[] = [
   {
     id: generateId(),
     name: 'size',
     title: 'Tamaño',
     usage: false,
-    values: [],
   },
   {
     id: generateId(),
     name: 'color',
     title: 'Color',
     usage: false,
-    values: [],
   },
   {
     id: generateId(),
     name: 'material',
     title: 'Material',
     usage: false,
-    values: [],
   },
   {
     id: generateId(),
     name: 'style',
     title: 'Estilo',
     usage: false,
-    values: [],
+   
   },
   {
     id: generateId(),
     name: 'pattern',
     title: 'Patrón',
     usage: false,
-    values: [],
+   
   },
   {
     id: generateId(),
     name: 'length',
     title: 'Longitud',
     usage: false,
-    values: [],
+   
   },
   {
     id: generateId(),
     name: 'width',
     title: 'Ancho',
     usage: false,
-    values: [],
+   
   },
 ];
+
 ```
 
 En este ejemplo, se definen varias opciones de variantes como 'Tamaño', 'Color', 'Material', etc. Cada opción tiene un nombre único, un título descriptivo y una lista de valores que se pueden asignar a esa opción.
@@ -242,22 +246,12 @@ export default function App() {
             name: 'size',
             title: 'Tamaño Personalizado',
             usage: true,
-            values: [
-              { id: 'small', title: 'Pequeño' },
-              { id: 'medium', title: 'Mediano' },
-              { id: 'large', title: 'Grande' },
-            ],
           },
           {
             id: 'customColorId',
             name: 'color',
             title: 'Color Personalizado',
             usage: true,
-            values: [
-              { id: 'red', title: 'Rojo' },
-              { id: 'blue', title: 'Azul' },
-              { id: 'green', title: 'Verde' },
-            ],
           },
         ],
         variationsSelected: [
