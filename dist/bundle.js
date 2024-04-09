@@ -1,9 +1,5 @@
 'use strict';
 
-function getDefaultExportFromCjs (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
 var react = {exports: {}};
 
 var react_production_min = {};
@@ -2799,7 +2795,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 var reactExports = react.exports;
-var React$1 = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -3227,9 +3222,9 @@ function VariantPricesEditor(_a) {
 
 function Alert(_a) {
   var message = _a.message;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "p-2 border text-red-400 border-red-200 bg-red-50 rounded-lg flex items-center gap-2 select-none"
-  }, /*#__PURE__*/React$1.createElement("svg", {
+  }, /*#__PURE__*/React.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     className: "icon icon-tabler icon-tabler-alert-circle",
     width: "20",
@@ -3240,17 +3235,17 @@ function Alert(_a) {
     fill: "none",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, /*#__PURE__*/React$1.createElement("path", {
+  }, /*#__PURE__*/React.createElement("path", {
     stroke: "none",
     d: "M0 0h24v24H0z",
     fill: "none"
-  }), /*#__PURE__*/React$1.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: "M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"
-  }), /*#__PURE__*/React$1.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: "M12 8v4"
-  }), /*#__PURE__*/React$1.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: "M12 16h.01"
-  })), /*#__PURE__*/React$1.createElement("p", {
+  })), /*#__PURE__*/React.createElement("p", {
     className: "text-sm"
   }, message));
 }
