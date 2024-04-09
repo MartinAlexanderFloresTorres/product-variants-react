@@ -1,6 +1,6 @@
 {
   "name": "product-variants-react",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "src/index.ts",
   "type": "module",
   "files": [
@@ -10,8 +10,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "jest",
-    "publish": "npm run build & npm publish"
+    "test": "jest"
   },
   "keywords": [
     "react",
