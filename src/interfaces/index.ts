@@ -6,6 +6,13 @@ export interface Variant {
   values: VariantValue[];
 }
 
+export interface VariantOptions {
+  id: string;
+  name: string;
+  title: string;
+  usage: boolean;
+}
+
 export interface VariantValue {
   id: string;
   title: string;

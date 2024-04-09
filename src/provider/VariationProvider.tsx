@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
-import { Variant, VariantPrice } from '../interfaces';
+import { Variant, VariantOptions, VariantPrice } from '../interfaces';
 import { VARIANTS } from '../constants/variants';
 import generateId from '../utils';
 
 interface VariantContextValues {
-  variations: Variant[];
+  variations: VariantOptions[];
   variationsSelected: Variant[];
   variantPrices: VariantPrice[];
   showModalVariation: boolean;
@@ -23,13 +23,13 @@ export const VariationContext = createContext<VariantContextValues>({} as Varian
 interface VariantProviderProps {
   children: React.ReactNode;
   store?: {
-    variations?: Variant[];
+    variations?: VariantOptions[];
     variationsSelected?: Variant[];
   };
 }
 
 export default function VariationProvider({ children, store = {} }: VariantProviderProps) {
-  const [variations, setVariations] = useState<Variant[]>(store.variations || VARIANTS);
+  const [variations, setVariations] = useState<VariantOptions[]>(store.variations || VARIANTS);
   const [variationsSelected, setVariationsSelected] = useState<Variant[]>(store.variationsSelected || []);
   const [showModalVariation, setShowModalVariation] = useState<boolean>(false);
   const [variationEdit, setVariation] = useState<Variant | null>(null);

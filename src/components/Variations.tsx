@@ -10,12 +10,12 @@ export const Modal = () => {
 };
 
 export const Selecteds = () => {
-  const { removeVariant, variationsSelected, updateVariationEdit } = useVariants();
+  const { variationsSelected } = useVariants();
   return (
     variationsSelected.length > 0 && (
       <div className="flex flex-col gap-6 w-full">
         {variationsSelected.map((variant) => (
-          <Variation key={variant.id} variant={variant} removeVariant={removeVariant} updateVariationEdit={updateVariationEdit} />
+          <Variation key={variant.id} variant={variant} />
         ))}
       </div>
     )

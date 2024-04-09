@@ -2912,44 +2912,37 @@ var VARIANTS = [{
   id: generateId(),
   name: 'size',
   title: 'Tamaño',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'color',
   title: 'Color',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'material',
   title: 'Material',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'style',
   title: 'Estilo',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'pattern',
   title: 'Patrón',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'length',
   title: 'Longitud',
-  usage: false,
-  values: []
+  usage: false
 }, {
   id: generateId(),
   name: 'width',
   title: 'Ancho',
-  usage: false,
-  values: []
+  usage: false
 }];
 
 var VariationContext = /*#__PURE__*/reactExports.createContext({});
@@ -3295,7 +3288,11 @@ function ModalVariation() {
       return variant.id === value;
     });
     if (newVariant) {
-      setVariantSelected(newVariant);
+      setVariantSelected(function (prev) {
+        return __assign(__assign({}, newVariant), {
+          values: prev ? prev.values : []
+        });
+      });
       if (values.length === 0) addValue();
     }
   };
@@ -3444,9 +3441,10 @@ function ModalVariation() {
 }
 
 function Variation(_a) {
-  var variant = _a.variant,
-    removeVariant = _a.removeVariant,
-    updateVariationEdit = _a.updateVariationEdit;
+  var variant = _a.variant;
+  var _b = useVariants(),
+    removeVariant = _b.removeVariant,
+    updateVariationEdit = _b.updateVariationEdit;
   return /*#__PURE__*/React.createElement("div", {
     className: "w-full animate-fade-in"
   }, /*#__PURE__*/React.createElement("div", {
@@ -3530,18 +3528,13 @@ var Modal = function () {
   return (showModalVariation || variationEdit) && /*#__PURE__*/React.createElement(ModalVariation, null);
 };
 var Selecteds = function () {
-  var _a = useVariants(),
-    removeVariant = _a.removeVariant,
-    variationsSelected = _a.variationsSelected,
-    updateVariationEdit = _a.updateVariationEdit;
+  var variationsSelected = useVariants().variationsSelected;
   return variationsSelected.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "flex flex-col gap-6 w-full"
   }, variationsSelected.map(function (variant) {
     return /*#__PURE__*/React.createElement(Variation, {
       key: variant.id,
-      variant: variant,
-      removeVariant: removeVariant,
-      updateVariationEdit: updateVariationEdit
+      variant: variant
     });
   }));
 };

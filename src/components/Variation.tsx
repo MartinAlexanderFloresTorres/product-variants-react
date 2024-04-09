@@ -1,12 +1,13 @@
+import { useVariants } from '../hooks/useVariants';
 import { Variant } from '../interfaces';
 
 interface VariationProps {
   variant: Variant;
-  removeVariant: (id: string) => void;
-  updateVariationEdit: (variant: Variant) => void;
 }
 
-export default function Variation({ variant, removeVariant, updateVariationEdit }: VariationProps) {
+export default function Variation({ variant }: VariationProps) {
+  const { removeVariant, updateVariationEdit } = useVariants();
+
   return (
     <div className="w-full animate-fade-in">
       <div className="flex items-center justify-between gap-4">

@@ -1,6 +1,6 @@
 {
   "name": "product-variants-react",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "main": "src/index.ts",
   "type": "module",
   "files": [
@@ -11,7 +11,7 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
-    "publish": "npm run build && npm publish"
+    "publish": "npm run build & npm publish"
   },
   "keywords": [
     "react",
@@ -64,8 +64,7 @@
   "homepage": "https://product-variant-react.netlify.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues",
-    "directory": "src",
-    "web": "https://github.com/MartinAlexanderFloresTorres/product-variants-react/issues"
+    "url": "https://github.com/MartinAlexanderFloresTorres/product-variants-react",
+    "directory": "src"
   }
 }

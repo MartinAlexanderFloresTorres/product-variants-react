@@ -33,7 +33,10 @@ export default function ModalVariation() {
   const selectVariant = (value: string) => {
     const newVariant = variations.find((variant) => variant.id === value);
     if (newVariant) {
-      setVariantSelected(newVariant);
+      setVariantSelected((prev) => ({
+        ...newVariant,
+        values: prev ? prev.values : [],
+      }));
       if (values.length === 0) addValue();
     }
   };
